@@ -277,8 +277,8 @@ angular.module('schemaForm').provider('sfBuilder', ['sfPathProvider', function(s
        */
       build: function(form, decorator, slots, lookup) {
         return build(form, decorator, function(form, field) {
-          if (form.type === 'template') {
-            return form.template;
+          if (field.type === 'template') {
+            return field.template;
           }
           return $templateCache.get(field.template);
         }, slots, undefined, undefined, lookup);
